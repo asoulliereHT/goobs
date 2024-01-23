@@ -42,11 +42,7 @@ If `imageWidth` and `imageHeight` are not specified, the compressed image will u
 
 **Compatible with inputs and scenes.**
 */
-func (c *Client) GetSourceDeinterlaceFieldOrder(sourceName string) (*GetSourceDeinterlaceFieldOrderResponse, error) {
-	params := &GetSourceDeinterlaceFieldOrderParams{
-		SourceName: sourceName,
-	}
-
+func (c *Client) GetSourceDeinterlaceFieldOrder(params *GetSourceDeinterlaceFieldOrderParams) (*GetSourceDeinterlaceFieldOrderResponse, error) {
 	data := &GetSourceDeinterlaceFieldOrderResponse{}
 	return data, c.client.SendRequest(params, data)
 }

@@ -41,12 +41,7 @@ If `imageWidth` and `imageHeight` are not specified, the compressed image will u
 
 **Compatible with inputs and scenes.**
 */
-func (c *Client) SetSourceDeinterlaceMode(sourceName string, deinterlaceMode string) (*SetSourceDeinterlaceModeResponse, error) {
-	params := SetSourceDeinterlaceModeParams{
-		SourceName:            sourceName,
-		SourceDeinterlaceMode: deinterlaceMode,
-	}
-
+func (c *Client) SetSourceDeinterlaceMode(params *SetSourceDeinterlaceModeParams) (*SetSourceDeinterlaceModeResponse, error) {
 	data := &SetSourceDeinterlaceModeResponse{}
-	return data, c.client.SendRequest(&params, data)
+	return data, c.client.SendRequest(params, data)
 }
